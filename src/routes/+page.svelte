@@ -1,2 +1,2 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1>Welcome to toolbox</h1>
+<p>This is a collection of small tools that I would like to be able to have on my mobile phone in a definitely not-tracking way.</p>
