@@ -5,8 +5,8 @@
 	import type { LayoutProps } from './$types';
 
   const links = [
-    { href: '/calc', label: 'Calculator' },
-    { href: '/units', label: 'Unit converter' },
+    { href: '/calc/', label: 'Calculator' },
+    { href: '/units/', label: 'Unit converter' },
   ];
 
 	let { children }: LayoutProps = $props();
@@ -52,7 +52,7 @@ a:hover {
 a[aria-current='page'] {
   opacity: 1;
   font-weight: 600;
-  background: #333;
+  background: #888;
   color: white;
 }
 </style>

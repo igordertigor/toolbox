@@ -67,8 +67,10 @@ let result = $derived(calc(expression));
 
 </script>
 
+<div class="display">
 <p class="expression">{visibleExpression}</p>
 <p class="result">{result}</p>
+</div>
 
 <table>
 <tbody>
@@ -112,19 +114,24 @@ let result = $derived(calc(expression));
 
 <style>
 button {
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
+  font-size: 16pt;
 }
 .expression {
-  font-size: 12pt;
+  font-size: 16pt;
   height: 20px
 }
 .result {
-  font-size: 10pt;
+  font-size: 14pt;
   color: #aaaaaa;
   height: 10px
 }
 table {
   margin: 0 auto;
+}
+.display {
+  padding-left: 20px;
+  padding-right: 20px;
 }
 </style>

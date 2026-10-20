@@ -1,1 +1,1 @@
-lftp -u "$SFTP_USER,$SFTP_PASSWORD" sftp://ngcobalt395.manitu.net -e "mirror -R build/ .; quit"
+lftp -u "${SFTP_USERNAME},${SFTP_PASSWORD}" "sftp://ngcobalt395.manitu.net:23/" -e "mirror -R build/ .; quit"

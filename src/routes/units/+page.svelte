@@ -1,7 +1,7 @@
 <script lang="ts">
 
-let fahrenheit = $state<number | null>(0);
-let celsius = $state<number | null>(0);
+let fahrenheit = $state<number | null>(null);
+let celsius = $state<number | null>(null);
 
 const TEMP_FAC = 5/9.;
 // c x 9/5 + 32
@@ -10,8 +10,8 @@ const celsius2fahrenheit = (c: number) => c / TEMP_FAC + 32;
 const fahrenheit2celsius = (f: number) => (f - 32)*TEMP_FAC;
 
 const FT_PER_M = 3.28084;
-let meters = $state<number | null>(0);
-let feet = $state<number | null>(0);
+let meters = $state<number | null>(null);
+let feet = $state<number | null>(null);
 
 </script>
 
@@ -23,15 +23,21 @@ let feet = $state<number | null>(0);
       </td><td>
         <input type="number" bind:value={
             () => celsius,
-            (c) => { celsius=Math.round(c); fahrenheit = Math.round(celsius2fahrenheit(c));}
-            }>
+            (c) => {
+              celsius=c;
+              fahrenheit = c === null ? null : Math.round(celsius2fahrenheit(c));
+            }
+          }>
       </td><td>
       °F
       </td><td>
         <input type="number" bind:value={
             () => fahrenheit,
-            (f) => { fahrenheit=Math.round(f); celsius = Math.round(fahrenheit2celsius(f));}
-            }>
+            (f) => {
+              fahrenheit=f;
+              celsius = f === null ? null : Math.round(fahrenheit2celsius(f));
+            }
+          }>
       </td>
     </tr>
   <!------------------------------------------------------------------------------->
@@ -41,15 +47,21 @@ let feet = $state<number | null>(0);
       </td><td>
         <input type="number" bind:value={
           () => meters,
-          (m) => { meters=Math.round(10*m)/10; feet = Math.round(10*FT_PER_M*m)/10; }
-          }>
+          (m) => {
+            meters=m;
+            feet = m === null ? null : Math.round(10*FT_PER_M*m)/10;
+          }
+        }>
       </td><td>
       Feet
       </td><td>
         <input type="number" bind:value={
           () => feet,
-          (m) => { meters=Math.round(10*m)/10; feet = Math.round(10*f/FT_PER_M)/10; }
-          }>
+          (f) => {
+            meters=f;
+            feet = f === null ? null : Math.round(10*f/FT_PER_M)/10;
+          }
+        }>
       </td>
     </tr>
   </tbody>
@@ -57,11 +69,10 @@ let feet = $state<number | null>(0);
 
 
 <style>
-#spacer {
-  width: 50px;
-}
 input {
   height: 30px;
+  width: 140px;
+  border-width: 0;
 }
 table {
   margin: auto;
