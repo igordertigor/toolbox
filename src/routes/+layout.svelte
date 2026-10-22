@@ -8,7 +8,7 @@
   const links = [
     { href: '/calc', label: 'Calculator' },
     { href: '/units', label: 'Unit converter' }
-  ];
+  ] as const;
 
   let { children }: LayoutProps = $props();
 </script>
