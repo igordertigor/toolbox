@@ -27,8 +27,9 @@
         return current;
       }
       const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
-      const last = previous.at(-1)
-      if (last !== undefined && digits.includes(last) && digits.includes(current)) return previous + current;
+      const last = previous.at(-1);
+      if (last !== undefined && digits.includes(last) && digits.includes(current))
+        return previous + current;
 
       return previous + ' ' + current;
     }, '');
