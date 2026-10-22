@@ -7,7 +7,8 @@
     const sanitized = [...expr];
 
     const valid = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '%', ')'];
-    while (sanitized.length && !valid.includes(sanitized.at(-1)!)) sanitized.pop();
+    const last = sanitized.at(-1);
+    while (sanitized.length && last !== undefined && !valid.includes(last)) sanitized.pop();
 
     if (sanitized.length === 0) return '';
 
@@ -26,7 +27,8 @@
         return current;
       }
       const digits = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '.'];
-      if (digits.includes(previous.at(-1)) && digits.includes(current)) return previous + current;
+      const last = previous.at(-1)
+      if (last !== undefined && digits.includes(last) && digits.includes(current)) return previous + current;
 
       return previous + ' ' + current;
     }, '');

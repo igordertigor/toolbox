@@ -19,7 +19,7 @@
     labelB="°F"
     convertAtoB={celsius2fahrenheit}
     convertBtoA={fahrenheit2celsius}
-    digits="1"
+    digits={1}
   />
   <br />
   <UnitConverter
@@ -27,7 +27,7 @@
     labelB="ft"
     convertAtoB={meter2feet}
     convertBtoA={feet2meter}
-    digits="1"
+    digits={1}
   />
 </div>
 
