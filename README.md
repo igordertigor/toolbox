@@ -5,6 +5,7 @@ One day, the built-in calculator app of my mobile phone asked me for data access
 This repository is a collection of tools that I would like to have available in my browser be definitely without any tracking, data collection or server access (beyond loading the actual app).
 
 At the moment, there are two tools:
+
 - A simple calculator that honours parentheses.
 - A unit converter for celsius/fahrenheit and meter/feet. If you need more units, feel free to open an issue.
 
