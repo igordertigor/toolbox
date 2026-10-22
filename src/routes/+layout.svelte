@@ -1,12 +1,13 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import './layout.css';
   import favicon from '#lib/assets/favicon.svg';
   import { page } from '$app/state';
   import type { LayoutProps } from './$types';
 
   const links = [
-    { href: '/calc/', label: 'Calculator' },
-    { href: '/units/', label: 'Unit converter' }
+    { href: '/calc', label: 'Calculator' },
+    { href: '/units', label: 'Unit converter' }
   ];
 
   let { children }: LayoutProps = $props();
@@ -17,8 +18,11 @@
 </svelte:head>
 
 <nav>
-  {#each links as link}
-    <a href={link.href} aria-current={page.url.pathname === link.href ? 'page' : undefined}>
+  {#each links as link (link.href)}
+    <a
+      href={resolve(link.href)}
+      aria-current={page.url.pathname === link.href ? 'page' : undefined}
+    >
       {link.label}
     </a>
   {/each}
